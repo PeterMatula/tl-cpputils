@@ -8,5 +8,5 @@
 @mainpage
 
 This is an automatically generated API documentation for the
-<a href="https://git.int.avast.com/viruslab/retdec/tl-cpputils">tl-cpputils project</a>.
+<a href="https://github.com/avast-tl/tl-cpputils">tl-cpputils project</a>.
 */
