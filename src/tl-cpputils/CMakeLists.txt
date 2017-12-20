@@ -2,6 +2,7 @@
 set(TL_CPPUTILS_SOURCES
 	address.cpp
 	alignment.cpp
+	binary_path.cpp
 	byte_value_storage.cpp
 	conversion.cpp
 	file_io.cpp
@@ -15,10 +16,12 @@ set(TL_CPPUTILS_SOURCES
 if(NOT TARGET tl-cpputils)
 
 	add_library(tl-cpputils STATIC ${TL_CPPUTILS_SOURCES})
+	target_link_libraries(tl-cpputils whereami)
 	if(MSVC)
-		target_link_libraries(tl-cpputils shlwapi) # shlwapi.dll for PathRemoveFileSpec()
+		target_link_libraries(tl-cpputils whereami shlwapi) # shlwapi.dll for PathRemoveFileSpec()
 	endif()
 	target_include_directories(tl-cpputils PUBLIC ${PROJECT_SOURCE_DIR}/include/)
+	target_include_directories(tl-cpputils PUBLIC ${PROJECT_SOURCE_DIR}/deps/)
 
 	# Disable the min() and max() macros to prevent errors when using e.g.
 	# std::numeric_limits<...>::max()
