@@ -1,7 +1,7 @@
 
 cmake_minimum_required(VERSION 3.6)
 
-project(tl-cpputils CXX)
+project(tl-cpputils CXX C)
 
 # Set the default build type to 'Release'
 if (NOT CMAKE_BUILD_TYPE)
